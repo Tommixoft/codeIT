@@ -6,6 +6,15 @@
 		<meta name="Description" CONTENT="Profesionalūs programavimo sprendimai tiek mažam, tiek dideliam verslui.">
         <title>CodeIT / Programavimas / .NET</title>
         <style>
+		$spacing: 2rem;
+		$spacing-large: $spacing * 3;
+		
+		*,
+		*:before,
+		*:after {
+		  box-sizing: inherit;
+		}
+
             body{
               padding: 0;
               margin: 0px 50px;
@@ -35,81 +44,78 @@ left
 z-index
 : 0;
 }
+
+.scene {
+  padding: $spacing-large $spacing;
+  max-width: 800px;
+  font-family: "Courier New", Helvetica, Arial, sans-serif;
+}
+
+.actor {
+  font-size: 1.5rem;
+  display: flex;
+  margin-bottom: $spacing;
+
+  &:last-of-type {
+    margin-bottom: $spacing-large;
+  }
+}
+
+.actor__content {
+  flex-grow: 1;
+}
+
+@keyframes blink {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.actor__content--typing::after {
+  content: '|';
+  animation: blink 500ms infinite;
+}
         </style>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js" type="text/javascript" charset="UTF-8"> </script>
     </head>
     <body>
-        <div style="width:100%;font-size:40px;letter-spacing:-8px;line-height:40px;">
+        <div style="width:100%;font-size:60px;letter-spacing:-8px;line-height:60px;">
             <h1>CodeIT</h1>
         </div>
+		
         <div>
-            <p><span id="decoded">.NET, SQL, WEB, Mobile, Windows Desktop, Services, REST API</span><span id="encoded"></span></p>
-            <p style="font-size: 20px"></p>
+            <p>NET, SQL, WEB, Mobile, Windows Desktop, Services, REST API</p>
+        </div>
+		
+		
+		<div class="scene">	
+
+		  <div class="actor">
+			<div class="actor__prefix">- </div>
+			<div id="klientas" class="actor__content"></div>
+		  </div>	
+		 
+		  <div class="actor">
+			<div class="actor__prefix">-</div>
+			<div id="tomas" class="actor__content"></div>
+		  </div>
+	  
+		</div>
+		
+		
+		
+        <div style="clear:both"></div>
+        <div style="margin-top:50px;text-align:left">
+            <p style="font-size:20px;"><img src="contact.png"></p>
         </div>
 		
 		<canvas class="background"></canvas>
-		
-				<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js" type="text/javascript" charset="UTF-8"> </script>
-		
-        <div style="clear:both"></div>
-        <div style="margin-top:30px;text-align:center">
-            <p style="font-size:20px;"></p>
-        </div>
     </body>
   
   <script>
-var got;
-var chars;
-
-function change()
-{
-   var randstring = "";
-   var rslength = chars.length - got.length;
-
-   var decrypted = document.getElementById("decoded");
-   var encrypted = document.getElementById("encoded");
-
-   for(var x=0;x<rslength;x++)
-   {
-      i = Math.floor(Math.random() * chars.length);
-      randstring += chars.charAt(i);
-   }
-
-   if(randstring.charAt(0) == chars.charAt(got.length))
-   {
-      got += randstring.charAt(0);
-      decrypted.innerHTML = got;
-   }
-   else
-   {
-      encrypted.innerHTML = randstring;
-   }
-
-   if(chars.length > got.length)
-   {
-      setTimeout("change()", 5);
-   }
-   else
-   {
-      encrypted.innerHTML = "";
-   }
-}
-function startdecrypt()
-{
-   var decrypted = document.getElementById("decoded");
-   var encrypted = document.getElementById("encoded");
-
-   chars = decrypted.innerHTML;
-   decrypted.innerHTML = "";
-   got = "";
-   setTimeout("change()", 5);
-}
-
 window.
 onload
 = function() {
-
-startdecrypt();
 
 Particles.
 init
@@ -120,43 +126,43 @@ init
 '.background'
 ,
   maxParticles: 
-250
+90
 ,
   
 // options for breakpoints
   responsive: [
     {
       breakpoint: 
-7668
+2268
 ,
       options: {
         maxParticles: 
-200
+50
 ,
         color: 
-'#dddddd'
+'#cdcdcd'
 ,
         connectParticles: 
 true
       }
     }, {
       breakpoint: 
-425
+205
 ,
       options: {
         maxParticles: 
-800
+80
 ,
         connectParticles: 
 true
       }
     }, {
       breakpoint: 
-320
+3320
 ,
       options: {
         maxParticles: 
-100
+90
  
       }
     }
@@ -165,4 +171,39 @@ true
 };
 </script>
   
+  <script src="https://cdn.jsdelivr.net/npm/theaterjs/dist/theater.min.js"></script>
+  
+  <script>
+  var theater = theaterJS();
+  
+theater
+  .on('type:start, erase:start', function () {
+    theater.getCurrentActor().$element.classList.add('actor__content--typing')
+  })
+  .on('type:end, erase:end', function () {
+    theater.getCurrentActor().$element.classList.remove('actor__content--typing')
+  })
+
+theater
+  .addActor('tomas', { speed: 0.8, accuracy: 0.7 })
+  .addActor('klientas', { speed: 1, accuracy: 0.9 })
+  
+  .addScene('klientas:Ar programuojate integracijas? ', 300)
+  .addScene('tomas:Žinoma...', -3, '!!! ', 600, 'Be problemų su viskuo! ', 600)
+  
+  .addScene('klientas:Ar galėtumėte prijungti prie mokėjimų sistemos, pvz NeoPay? ', 300)
+  .addScene('tomas:Tikrai taip :)', 300)
+  
+  .addScene('klientas:Mums reikia specifinės programos mūsų poreikiams. Sukurtumėte?', 500)
+  .addScene('tomas:Taip, tai dažniausiai man tenkantis darbas.', 300)
+  
+  .addScene('klientas:Gal ir su Rivile integraciją padarytumėte?', 500)
+  .addScene('tomas:Daryta ir net ne sykį :)', 300)
+
+  
+  .addScene(theater.replay.bind(theater))
+
+
+
+  </script>
 </html>
