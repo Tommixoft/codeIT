@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8">
+		<meta name="Description" CONTENT="Profesionalūs programavimo sprendimai tiek mažam, tiek dideliam verslui.">
+        <title>CodeIT / Programavimas / .NET</title>
+        <style>
+            body{
+              padding: 0;
+              margin: 0px 50px;
+              font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+              font-weight: 300;
+              text-rendering: optimizelegibility;
+            }
+            p{font-size: 30px; line-height: 30px}
+			.background {
+  
+position
+:
+ absolute
+;
+  
+display
+:
+ block
+;
+  
+top
+: 0;
+  
+left
+: 0;
+  
+z-index
+: 0;
+}
+        </style>
+
+    </head>
+    <body>
+        <div style="width:100%;font-size:40px;letter-spacing:-8px;line-height:40px;">
+            <h1>CodeIT</h1>
+        </div>
+        <div>
+            <p><span id="decoded">.NET, SQL, WEB, Mobile, Windows Desktop, Services, REST API</span><span id="encoded"></span></p>
+            <p style="font-size: 20px"></p>
+        </div>
+		
+		<canvas class="background"></canvas>
+		
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js" type="text/javascript" charset="UTF-8"> </script>
+		
+        <div style="clear:both"></div>
+        <div style="margin-top:30px;text-align:center">
+            <p style="font-size:20px;"></p>
+        </div>
+    </body>
+  
+  <script>
+var got;
+var chars;
+
+function change()
+{
+   var randstring = "";
+   var rslength = chars.length - got.length;
+
+   var decrypted = document.getElementById("decoded");
+   var encrypted = document.getElementById("encoded");
+
+   for(var x=0;x<rslength;x++)
+   {
+      i = Math.floor(Math.random() * chars.length);
+      randstring += chars.charAt(i);
+   }
+
+   if(randstring.charAt(0) == chars.charAt(got.length))
+   {
+      got += randstring.charAt(0);
+      decrypted.innerHTML = got;
+   }
+   else
+   {
+      encrypted.innerHTML = randstring;
+   }
+
+   if(chars.length > got.length)
+   {
+      setTimeout("change()", 5);
+   }
+   else
+   {
+      encrypted.innerHTML = "";
+   }
+}
+function startdecrypt()
+{
+   var decrypted = document.getElementById("decoded");
+   var encrypted = document.getElementById("encoded");
+
+   chars = decrypted.innerHTML;
+   decrypted.innerHTML = "";
+   got = "";
+   setTimeout("change()", 10);
+}
+
+window.
+onload
+= function() {
+
+startdecrypt();
+
+Particles.
+init
+({
+  
+// normal options
+  selector: 
+'.background'
+,
+  maxParticles: 
+250
+,
+  
+// options for breakpoints
+  responsive: [
+    {
+      breakpoint: 
+7668
+,
+      options: {
+        maxParticles: 
+200
+,
+        color: 
+'#dddddd'
+,
+        connectParticles: 
+true
+      }
+    }, {
+      breakpoint: 
+425
+,
+      options: {
+        maxParticles: 
+800
+,
+        connectParticles: 
+true
+      }
+    }, {
+      breakpoint: 
+320
+,
+      options: {
+        maxParticles: 
+100
+ 
+      }
+    }
+  ]
+});
+};
+</script>
+  
+</html>
