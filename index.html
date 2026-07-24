@@ -1,209 +1,205 @@
 <!DOCTYPE html>
 <html>
-    <head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="Description" CONTENT="Profesionalūs programavimo sprendimai tiek mažam, tiek dideliam verslui.">
-        <title>CodeIT / Programavimas / .NET</title>
-        <style>
-		$spacing: 2rem;
-		$spacing-large: $spacing * 3;
-		
-		*,
-		*:before,
-		*:after {
-		  box-sizing: inherit;
-		}
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Code It | Programavimo paslaugos</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#0c0c0e;}
+body{font-family:'Space Grotesk',Helvetica,sans-serif;color:#ececec;}
+a{color:#ececec;text-decoration:none;}
+a:hover{color:#c8f31d;}
+::selection{background:#c8f31d;color:#0c0c0e;}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+</style>
+</helmet>
+<div style="min-height:100vh;background:#0c0c0e;position:relative;overflow-x:hidden">
+  <!-- parallax grid backdrop -->
+  <div data-fx="grid" style="position:fixed;inset:-100px 0;pointer-events:none;background-image:linear-gradient(rgba(236,236,236,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(236,236,236,0.05) 1px,transparent 1px);background-size:48px 48px;will-change:transform"></div>
+  <!-- drifting glow blobs -->
+  <div data-fx="blob1" style="position:fixed;top:-180px;right:-160px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(200,243,29,0.13),transparent 65%);pointer-events:none;will-change:transform"></div>
+  <div data-fx="blob2" style="position:fixed;bottom:-220px;left:-180px;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(200,243,29,0.09),transparent 65%);pointer-events:none;will-change:transform"></div>
+  <!-- scroll progress bar -->
+  <div data-fx="progress" style="position:fixed;top:0;left:0;height:3px;width:100%;background:#c8f31d;transform-origin:0 50%;transform:scaleX(0);z-index:50"></div>
 
-            body{
-              padding: 0;
-              margin: 0px 50px;
-              font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-              font-weight: 300;
-              text-rendering: optimizelegibility;
-            }
-            p{font-size: 30px; line-height: 30px}
-			.background {
-  
-position
-:
- absolute
-;
-  
-display
-:
- block
-;
-  
-top
-: 0;
-  
-left
-: 0;
-  
-z-index
-: 0;
-}
+  <div style="position:relative">
+  <!-- Nav -->
+  <header style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;max-width:1240px;margin:0 auto;padding:clamp(16px,3vw,28px) clamp(18px,4vw,32px)">
+    <div style="display:flex;align-items:center;gap:12px">
+      <div style="width:34px;height:34px;background:#c8f31d;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-weight:600;color:#0c0c0e;font-size:17px">&lt;/&gt;</div>
+      <div style="font-weight:700;font-size:19px;letter-spacing:-0.02em">Code it</div>
+    </div>
+    <nav style="display:flex;gap:clamp(14px,3vw,32px);align-items:center;font-family:'IBM Plex Mono',monospace;font-size:13px;flex-wrap:wrap">
+      <a href="#services" style="opacity:0.7" style-hover="opacity:1;color:#c8f31d">paslaugos</a>
+      <a href="#process" style="opacity:0.7" style-hover="opacity:1;color:#c8f31d">procesas</a>
+      <a href="#contact" style="border:1px solid #c8f31d;color:#c8f31d;padding:9px 18px;white-space:nowrap" style-hover="background:#c8f31d;color:#0c0c0e">susisiekti --dabar</a>
+    </nav>
+  </header>
 
-.scene {
-  padding: $spacing-large $spacing;
-  max-width: 800px;
-  font-family: "Courier New", Helvetica, Arial, sans-serif;
-}
+  <!-- Hero -->
+  <section data-screen-label="Hero" style="max-width:1240px;margin:0 auto;padding:clamp(56px,8vw,96px) clamp(18px,4vw,32px) clamp(64px,9vw,110px)">
+    <div data-reveal="" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#c8f31d;margin-bottom:28px;overflow-wrap:anywhere">~/vilnius/programuotojas $ <span style="animation:blink 1.1s step-end infinite">▌</span></div>
+    <h1 data-reveal="" style="font-size:clamp(40px,7.5vw,110px);line-height:1.04;font-weight:700;letter-spacing:-0.045em;margin:0 0 36px;max-width:1000px;text-wrap:balance">Jūsų verslo logika, paversta <span style="color: rgb(200, 243, 29);">programine įranga</span>, kuri nenuvilia.</h1>
+    <div data-reveal="" style="display:flex;gap:clamp(24px,4vw,48px);flex-wrap:wrap;align-items:flex-end;justify-content:space-between">
+      <p style="font-size:clamp(17px,2vw,20px);line-height:1.55;max-width:520px;margin:0;color:#a3a3a3"><b>Code it</b> — vieno programuotojo studija Vilniuje. Jokių vadybininkų, jokių perdavimų, jokio sugedusio telefono — kalbatės tiesiogiai su žmogumi, kuris rašo kodą.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="#contact" style="background:#c8f31d;color:#0c0c0e;font-weight:700;font-size:17px;padding:16px 30px;letter-spacing:-0.01em;white-space:nowrap" style-hover="background:#ececec;color:#0c0c0e">Pradėti projektą</a>
+        <a href="#services" style="border:1px solid rgba(236,236,236,0.25);color:#ececec;font-weight:500;font-size:17px;padding:16px 30px;white-space:nowrap" style-hover="border-color:#c8f31d;color:#c8f31d">Paslaugos</a>
+      </div>
+    </div>
+    <!-- Stat strip -->
+    <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:rgba(236,236,236,0.14);border:1px solid rgba(236,236,236,0.14);margin-top:clamp(52px,7vw,88px)">
+      <div style="background:#0c0c0e;padding:24px 28px"><div style="font-family:'IBM Plex Mono',monospace;font-size:30px;color:#c8f31d;font-weight:600">4+</div><div style="font-size:14px;color:#a3a3a3;margin-top:6px">Platformos: web, mobili, Windows, Linux</div></div>
+      <div style="background:#0c0c0e;padding:24px 28px"><div style="font-family:'IBM Plex Mono',monospace;font-size:30px;color:#c8f31d;font-weight:600">15+</div><div style="font-size:14px;color:#a3a3a3;margin-top:6px">Metų programavimo patirtis</div></div>
+      <div style="background:#0c0c0e;padding:24px 28px"><div style="font-family:'IBM Plex Mono',monospace;font-size:30px;color:#c8f31d;font-weight:600">1:1</div><div style="font-size:14px;color:#a3a3a3;margin-top:6px">Dirbate tiesiogiai su programuotoju</div></div>
+      <div style="background:#0c0c0e;padding:24px 28px"><div style="font-family:'IBM Plex Mono',monospace;font-size:30px;color:#c8f31d;font-weight:600">EU</div><div style="font-size:14px;color:#a3a3a3;margin-top:6px">Įsikūrę Vilniuje, dirbame visame pasaulyje</div></div>
+      <div style="background:#0c0c0e;padding:24px 28px"><div style="font-family:'IBM Plex Mono',monospace;font-size:30px;color:#c8f31d;font-weight:600">&lt;48h</div><div style="font-size:14px;color:#a3a3a3;margin-top:6px">Atsakymas į kiekvieną laišką</div></div>
+    </div>
+  </section>
 
-.actor {
-  font-size: 1.5rem;
-  display: flex;
-  margin-bottom: $spacing;
+  <!-- Services -->
+  <section id="services" data-screen-label="Paslaugos" style="border-top:1px solid rgba(236,236,236,0.14)">
+    <div style="max-width:1240px;margin:0 auto;padding:clamp(56px,7vw,88px) clamp(18px,4vw,32px)">
+      <div data-reveal="" style="display:flex;align-items:baseline;gap:20px;margin-bottom:clamp(36px,5vw,56px)">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#c8f31d">// 01</span>
+        <h2 style="font-size:clamp(32px,4vw,52px);font-weight:700;letter-spacing:-0.03em;margin:0">Paslaugos</h2>
+      </div>
+      <div style="display:flex;flex-direction:column">
+        <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:12px 32px;align-items:baseline;padding:32px 0;border-top:1px solid rgba(236,236,236,0.14)" style-hover="background:rgba(200,243,29,0.04)">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#c8f31d;flex:0 0 64px">.web</div>
+          <h3 style="font-size:clamp(22px,3vw,28px);font-weight:700;letter-spacing:-0.02em;margin:0;flex:1 1 240px">Interneto aplikacijos</h3>
+          <p style="font-size:17px;line-height:1.6;color:#a3a3a3;margin:0;flex:1 1 320px">Interneto sistemos ilgam laikui — klientų portalai, valdymo skydeliai, vidinės platformos. Saugios pagal nutylėjimą, greitos net ir su didele apkrova.</p>
+        </div>
+        <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:12px 32px;align-items:baseline;padding:32px 0;border-top:1px solid rgba(236,236,236,0.14)" style-hover="background:rgba(200,243,29,0.04)">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#c8f31d;flex:0 0 64px">.api</div>
+          <h3 style="font-size:clamp(22px,3vw,28px);font-weight:700;letter-spacing:-0.02em;margin:0;flex:1 1 240px">API ir serverinės sistemos </h3>
+          <p style="font-size:17px;line-height:1.6;color:#a3a3a3;margin:0;flex:1 1 320px">REST API ir serverinės paslaugos, sujungiančios jūsų sistemas, partnerius ir duomenis — dokumentuotos, ištestuotos ir patikimai nuobodžios.</p>
+        </div>
+        <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:12px 32px;align-items:baseline;padding:32px 0;border-top:1px solid rgba(236,236,236,0.14)" style-hover="background:rgba(200,243,29,0.04)">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#c8f31d;flex:0 0 64px">.app</div>
+          <h3 style="font-size:clamp(22px,3vw,28px);font-weight:700;letter-spacing:-0.02em;margin:0;flex:1 1 240px">Mobiliosios programėlės</h3>
+          <p style="font-size:17px;line-height:1.6;color:#a3a3a3;margin:0;flex:1 1 320px">Programėlės iOS ir Android įrenginiams — nuo idėjos iki App Store ir Google Play. Viena kodo bazė, natūrali patirtis abiejose platformose.</p>
+        </div>
+        <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:12px 32px;align-items:baseline;padding:32px 0;border-top:1px solid rgba(236,236,236,0.14);border-bottom:1px solid rgba(236,236,236,0.14)" style-hover="background:rgba(200,243,29,0.04)">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#c8f31d;flex:0 0 64px">.exe</div>
+          <h3 style="font-size:clamp(22px,3vw,28px);font-weight:700;letter-spacing:-0.02em;margin:0;flex:1 1 240px">Darbalaukio programos</h3>
+          <p style="font-size:17px;line-height:1.6;color:#a3a3a3;margin:0;flex:1 1 320px">Windows ir Linux programos sandėliams, dirbtuvėms ir biurams — įrankiai, kuriuos jūsų komanda naudoja aštuonias valandas per dieną.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  &:last-of-type {
-    margin-bottom: $spacing-large;
+  <!-- Process -->
+  <section id="process" data-screen-label="Procesas" style="border-top:1px solid rgba(236,236,236,0.14)">
+    <div style="max-width:1240px;margin:0 auto;padding:clamp(56px,7vw,88px) clamp(18px,4vw,32px)">
+      <div data-reveal="" style="display:flex;align-items:baseline;gap:20px;margin-bottom:clamp(36px,5vw,56px)">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#c8f31d">// 02</span>
+        <h2 style="font-size:clamp(32px,4vw,52px);font-weight:700;letter-spacing:-0.03em;margin:0">Kaip tai veikia</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+        <div data-reveal="" style="border:1px solid rgba(236,236,236,0.14);padding:32px 28px;background:rgba(12,12,14,0.6)">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#c8f31d;margin-bottom:20px">zingsnis_1</div>
+          <h3 style="font-size:22px;font-weight:700;margin:0 0 12px">Papasakokite apie problemą</h3>
+          <p style="font-size:16px;line-height:1.6;color:#a3a3a3;margin:0">Užtenka vieno laiško. Užduosiu tinkamus klausimus ir atsiųsiu aiškų planą paprasta kalba su fiksuota apimtimi.</p>
+        </div>
+        <div data-reveal="" style="border:1px solid rgba(236,236,236,0.14);padding:32px 28px;background:rgba(12,12,14,0.6)">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#c8f31d;margin-bottom:20px">zingsnis_2</div>
+          <h3 style="font-size:22px;font-weight:700;margin:0 0 12px">Aš kuriu — jūs matote progresą</h3>
+          <p style="font-size:16px;line-height:1.6;color:#a3a3a3;margin:0">Veikianti programinė įranga kiekvieną savaitę, o ne didysis atskleidimas pabaigoje. Kryptį galite keisti, kol tai dar pigu.</p>
+        </div>
+        <div data-reveal="" style="border:1px solid rgba(236,236,236,0.14);padding:32px 28px;background:rgba(12,12,14,0.6)">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#c8f31d;margin-bottom:20px">zingsnis_3</div>
+          <h3 style="font-size:22px;font-weight:700;margin:0 0 12px">Paleidimas ir palaikymas</h3>
+          <p style="font-size:16px;line-height:1.6;color:#a3a3a3;margin:0">Diegimas, dokumentacija ir programuotojas, kuris vis dar atsako į jūsų laiškus ir po metų.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" data-screen-label="Kontaktai" style="border-top:1px solid rgba(236,236,236,0.14)">
+    <div style="max-width:1240px;margin:0 auto;padding:clamp(64px,8vw,100px) clamp(18px,4vw,32px) 60px;text-align:center">
+      <div data-reveal="" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#c8f31d;margin-bottom:24px">// 03 — kontaktai</div>
+      <h2 data-reveal="" style="font-size:clamp(36px,6vw,84px);font-weight:700;letter-spacing:-0.04em;line-height:1.05;margin:0 0 28px;text-wrap:balance">Turite projektą?</h2>
+      <p data-reveal="" style="font-size:18px;color:#a3a3a3;margin:0 auto 44px;max-width:460px;line-height:1.6">Vienas laiškas. Jokio pardavimų spaudimo — tik aiškus atsakymas, ar galiu padėti.</p>
+      <a data-reveal="" href="#contact" onClick="{{ openMail }}" style="display:inline-flex;align-items:center;gap:14px;background:#c8f31d;color:#0c0c0e;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:clamp(15px,2.4vw,24px);padding:20px clamp(20px,4vw,40px);cursor:pointer;max-width:100%;overflow-wrap:anywhere" style-hover="background:#ececec">{{ emailDisplay }}</a>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-top:clamp(64px,8vw,110px);border-top:1px solid rgba(236,236,236,0.14);padding-top:28px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#a3a3a3">
+        <div>Code it — programavimo studija</div>
+        <div>Vilnius, Lietuva · © 2026</div>
+      </div>
+    </div>
+  </section>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { revealed: false };
+  getEmail() {
+    return [118,98,99,100,112,101,102,106,117,65,104,110,98,106,109,47,100,112,110].map(c => String.fromCharCode(c - 1)).join('');
+  }
+  componentDidMount() {
+    // reveal-on-scroll
+    const els = document.querySelectorAll('[data-reveal]');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting) {
+          en.target.style.opacity = '1';
+          en.target.style.transform = 'translateY(0)';
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(28px)';
+      el.style.transition = 'opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1)';
+      io.observe(el);
+    });
+    // parallax + progress
+    const grid = document.querySelector('[data-fx="grid"]');
+    const b1 = document.querySelector('[data-fx="blob1"]');
+    const b2 = document.querySelector('[data-fx="blob2"]');
+    const bar = document.querySelector('[data-fx="progress"]');
+    let raf = 0;
+    this._onScroll = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        const y = window.scrollY;
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        if (grid) grid.style.transform = 'translateY(' + (y * 0.12 % 48) + 'px)';
+        if (b1) b1.style.transform = 'translate(' + (-y * 0.06) + 'px,' + (y * 0.10) + 'px)';
+        if (b2) b2.style.transform = 'translate(' + (y * 0.05) + 'px,' + (-y * 0.08) + 'px)';
+        if (bar) bar.style.transform = 'scaleX(' + (max > 0 ? y / max : 0) + ')';
+      });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+  }
+  renderVals() {
+    const email = this.getEmail();
+    return {
+      emailDisplay: this.state.revealed ? email : 'spauskite, kad pamatyti email',
+      openMail: (e) => {
+        e.preventDefault();
+        if (!this.state.revealed) this.setState({ revealed: true });
+        else window.location.href = 'mailto:' + email;
+      }
+    };
   }
 }
-
-.actor__content {
-  flex-grow: 1;
-}
-
-@keyframes blink {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.actor__content--typing::after {
-  content: '|';
-  animation: blink 500ms infinite;
-}
-        </style>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js" type="text/javascript" charset="UTF-8"> </script>
-    </head>
-    <body>
-        <div style="width:100%;font-size:60px;letter-spacing:-8px;line-height:60px;">
-            <h1>CodeIT</h1>
-        </div>
-		
-        <div>
-            <p>NET, SQL, WEB, Mobile, Windows Desktop, Services, REST API</p>
-        </div>
-		
-		
-		<div class="scene">	
-
-		  <div class="actor">
-			<div class="actor__prefix">- </div>
-			<div id="klientas" class="actor__content"></div>
-		  </div>	
-		 
-		  <div class="actor">
-			<div class="actor__prefix">-</div>
-			<div id="tomas" class="actor__content"></div>
-		  </div>
-	  
-		</div>
-		
-		
-		
-        <div style="clear:both"></div>
-        <div style="margin-top:50px;text-align:left">
-            <p style="font-size:20px;"><img src="contact.png"></p>
-        </div>
-		
-		<canvas class="background"></canvas>
-    </body>
-  
-  <script>
-window.
-onload
-= function() {
-
-Particles.
-init
-({
-  
-// normal options
-  selector: 
-'.background'
-,
-  maxParticles: 
-90
-,
-  
-// options for breakpoints
-  responsive: [
-    {
-      breakpoint: 
-2268
-,
-      options: {
-        maxParticles: 
-50
-,
-        color: 
-'#cdcdcd'
-,
-        connectParticles: 
-true
-      }
-    }, {
-      breakpoint: 
-205
-,
-      options: {
-        maxParticles: 
-80
-,
-        connectParticles: 
-true
-      }
-    }, {
-      breakpoint: 
-3320
-,
-      options: {
-        maxParticles: 
-90
- 
-      }
-    }
-  ]
-});
-};
 </script>
-  
-  <script src="https://cdn.jsdelivr.net/npm/theaterjs/dist/theater.min.js"></script>
-  
-  <script>
-  var theater = theaterJS();
-  
-theater
-  .on('type:start, erase:start', function () {
-    theater.getCurrentActor().$element.classList.add('actor__content--typing')
-  })
-  .on('type:end, erase:end', function () {
-    theater.getCurrentActor().$element.classList.remove('actor__content--typing')
-  })
-
-theater
-  .addActor('tomas', { speed: 0.8, accuracy: 0.7 })
-  .addActor('klientas', { speed: 1, accuracy: 0.9 })
-  
-  .addScene('klientas:Ar programuojate integracijas? ', 300)
-  .addScene('tomas:Žinoma...', -3, '!!! ', 600, 'Be problemų su viskuo! ', 600)
-  
-  .addScene('klientas:Ar galėtumėte prijungti prie mokėjimų sistemos, pvz NeoPay? ', 300)
-  .addScene('tomas:Tikrai taip :)', 300)
-  
-  .addScene('klientas:Mums reikia specifinės programos mūsų poreikiams. Sukurtumėte?', 500)
-  .addScene('tomas:Taip, tai dažniausiai man tenkantis darbas.', 300)
-  
-  .addScene('klientas:Gal ir su Rivile integraciją padarytumėte?', 500)
-  .addScene('tomas:Daryta ir net ne sykį :)', 300)
-
-  
-  .addScene(theater.replay.bind(theater))
-
-
-
-  </script>
+</body>
 </html>
