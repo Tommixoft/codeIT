@@ -1015,7 +1015,8 @@ function Bend({ children, className, style, ...options }: BendProps) {
             position: "relative",
             width: "100%",
             height: "100%",
-            overflow: "auto",
+            overflowY: "auto",
+            overflowX: "hidden",
           }}
         >
           {children}
